@@ -1,0 +1,61 @@
+/**
+ * Document checklists. `cond: true` marks items that depend on the client's situation.
+ * These are commonly requested items — not a statutory list.
+ */
+export const CHECKLISTS = {
+  personal: [
+    { en: 'e-TIN certificate', bn: 'ই-টিআইএন সনদ' },
+    { en: 'National ID (for identity verification, shared through a secure channel)', bn: 'জাতীয় পরিচয়পত্র (পরিচয় যাচাইয়ের জন্য, নিরাপদ মাধ্যমে)' },
+    { en: 'Salary statement / salary certificate from employer', bn: 'নিয়োগকর্তার দেওয়া বেতন বিবরণী / বেতন সনদ', cond: true },
+    { en: 'Bank statements for the income year', bn: 'আয়বর্ষের ব্যাংক স্টেটমেন্ট' },
+    { en: 'Bank interest / profit certificates and tax deduction certificates', bn: 'ব্যাংক সুদ/মুনাফার সনদ ও কর কর্তনের সনদ' },
+    { en: 'TDS / AIT certificates or challans for tax already paid', bn: 'ইতিমধ্যে পরিশোধিত করের টিডিএস / এআইটি সনদ বা চালান', cond: true },
+    { en: 'Investment records for rebate (DPS, savings certificates, life insurance premium, etc.)', bn: 'রেয়াতের জন্য বিনিয়োগের প্রমাণ (ডিপিএস, সঞ্চয়পত্র, জীবনবিমার প্রিমিয়াম ইত্যাদি)', cond: true },
+    { en: 'House property income records (rent agreements, municipal tax, loan interest)', bn: 'বাড়িভাড়া আয়ের রেকর্ড (ভাড়ার চুক্তি, পৌরকর, ঋণের সুদ)', cond: true },
+    { en: 'Information on assets and liabilities (land, flat, vehicle, deposits, loans)', bn: 'সম্পদ ও দায়ের তথ্য (জমি, ফ্ল্যাট, গাড়ি, আমানত, ঋণ)' },
+    { en: 'Copy of previous year’s return, if filed', bn: 'আগের বছরের রিটার্নের কপি (দাখিল করে থাকলে)', cond: true },
+  ],
+  company: [
+    { en: 'Company e-TIN certificate', bn: 'কোম্পানির ই-টিআইএন সনদ' },
+    { en: 'Certificate of Incorporation, Memorandum and Articles of Association', bn: 'নিবন্ধন সনদ (Certificate of Incorporation), মেমোরেন্ডাম ও আর্টিকেলস অব অ্যাসোসিয়েশন' },
+    { en: 'Audited financial statements for the income year', bn: 'আয়বর্ষের নিরীক্ষিত আর্থিক বিবরণী' },
+    { en: 'Bank statements of all company accounts', bn: 'কোম্পানির সব ব্যাংক হিসাবের স্টেটমেন্ট' },
+    { en: 'Advance tax and TDS/VDS challans and certificates', bn: 'অগ্রিম কর এবং টিডিএস/ভিডিএস চালান ও সনদ', cond: true },
+    { en: 'Fixed asset register and depreciation schedule', bn: 'স্থায়ী সম্পদের রেজিস্টার ও অবচয় সূচি', cond: true },
+    { en: 'Trade licence and BIN / VAT registration', bn: 'ট্রেড লাইসেন্স ও বিআইএন / ভ্যাট নিবন্ধন', cond: true },
+    { en: 'Details of directors and shareholders', bn: 'পরিচালক ও শেয়ারহোল্ডারদের বিবরণ' },
+    { en: 'Previous year’s return and assessment documents', bn: 'আগের বছরের রিটার্ন ও কর নির্ধারণ-সংক্রান্ত কাগজপত্র', cond: true },
+  ],
+  professional: [
+    { en: 'e-TIN certificate', bn: 'ই-টিআইএন সনদ' },
+    { en: 'Records of professional income (invoices, receipts, payment statements)', bn: 'পেশাগত আয়ের রেকর্ড (ইনভয়েস, রসিদ, পেমেন্ট স্টেটমেন্ট)' },
+    { en: 'Bank statements, including accounts receiving professional or foreign remittance income', bn: 'ব্যাংক স্টেটমেন্ট, পেশাগত বা বৈদেশিক রেমিট্যান্স আয় জমা হওয়া হিসাবসহ' },
+    { en: 'Records of professional expenses (chamber/office rent, staff, equipment)', bn: 'পেশাগত ব্যয়ের রেকর্ড (চেম্বার/অফিস ভাড়া, কর্মী, সরঞ্জাম)', cond: true },
+    { en: 'TDS certificates from clients or institutions', bn: 'ক্লায়েন্ট বা প্রতিষ্ঠানের দেওয়া টিডিএস সনদ', cond: true },
+    { en: 'Professional registration or licence (e.g. BMDC, Bar Council, IEB)', bn: 'পেশাগত নিবন্ধন বা লাইসেন্স (যেমন বিএমডিসি, বার কাউন্সিল, আইইবি)', cond: true },
+    { en: 'Freelancing platform earning statements', bn: 'ফ্রিল্যান্সিং প্ল্যাটফর্মের আয়ের বিবরণী', cond: true },
+    { en: 'Investment records for rebate', bn: 'রেয়াতের জন্য বিনিয়োগের প্রমাণ', cond: true },
+    { en: 'Information on assets and liabilities', bn: 'সম্পদ ও দায়ের তথ্য' },
+    { en: 'Copy of previous year’s return, if filed', bn: 'আগের বছরের রিটার্নের কপি (দাখিল করে থাকলে)', cond: true },
+  ],
+  visa: [
+    { en: 'Sponsor’s e-TIN certificate', bn: 'স্পন্সরের ই-টিআইএন সনদ' },
+    { en: 'Sponsor’s National ID (shared through a secure channel)', bn: 'স্পন্সরের জাতীয় পরিচয়পত্র (নিরাপদ মাধ্যমে)' },
+    { en: 'Sponsor’s genuine income source documents (salary, business, rent, etc.)', bn: 'স্পন্সরের প্রকৃত আয়ের উৎসের কাগজপত্র (বেতন, ব্যবসা, বাড়িভাড়া ইত্যাদি)' },
+    { en: 'Sponsor’s bank statements', bn: 'স্পন্সরের ব্যাংক স্টেটমেন্ট' },
+    { en: 'Bank solvency certificate', bn: 'ব্যাংক সলভেন্সি সনদ', cond: true },
+    { en: 'Previous years’ returns (some embassies ask for several years)', bn: 'আগের বছরগুলোর রিটার্ন (কিছু দূতাবাস একাধিক বছরের চায়)', cond: true },
+    { en: 'Documents for assets declared (land, flat, deposits)', bn: 'ঘোষিত সম্পদের কাগজপত্র (জমি, ফ্ল্যাট, আমানত)', cond: true },
+    { en: 'Proof of relationship between sponsor and student', bn: 'স্পন্সর ও শিক্ষার্থীর সম্পর্কের প্রমাণ', cond: true },
+    { en: 'Embassy or university financial document requirements', bn: 'দূতাবাস বা বিশ্ববিদ্যালয়ের আর্থিক কাগজপত্রের চাহিদাপত্র', cond: true },
+  ],
+  etin: [
+    { en: 'National ID (for individual registration)', bn: 'জাতীয় পরিচয়পত্র (ব্যক্তিগত নিবন্ধনের জন্য)' },
+    { en: 'Active mobile number and email address', bn: 'সচল মোবাইল নম্বর ও ইমেইল ঠিকানা' },
+    { en: 'Present and permanent address details', bn: 'বর্তমান ও স্থায়ী ঠিকানার বিবরণ' },
+    { en: 'Existing e-TIN certificate (for updates or corrections)', bn: 'বিদ্যমান ই-টিআইএন সনদ (হালনাগাদ বা সংশোধনের জন্য)', cond: true },
+    { en: 'Supporting documents for the information being corrected', bn: 'যে তথ্য সংশোধন করা হবে তার সমর্থনে কাগজপত্র', cond: true },
+    { en: 'Passport (for non-residents or foreign nationals)', bn: 'পাসপোর্ট (অনিবাসী বা বিদেশি নাগরিকের ক্ষেত্রে)', cond: true },
+    { en: 'For companies: Certificate of Incorporation and related registration documents', bn: 'কোম্পানির ক্ষেত্রে: নিবন্ধন সনদ ও সংশ্লিষ্ট কাগজপত্র', cond: true },
+  ],
+};
