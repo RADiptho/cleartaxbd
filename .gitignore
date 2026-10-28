@@ -1,0 +1,13 @@
+# Dependencies & build output (Cloudflare Pages rebuilds dist/ on every push)
+node_modules/
+dist/
+# Local environment overrides (keep .env.production committed)
+.env.local
+.env.*.local
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+.wrangler/
