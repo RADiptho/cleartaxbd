@@ -32,7 +32,7 @@ function HeroVisual() {
           </div>
 
           {/* Document card */}
-          <div className="mt-6 rounded-2xl bg-white p-5 shadow-xl">
+          <div className="mt-4 rounded-2xl bg-white p-4 shadow-xl">
             <div className="flex items-start justify-between gap-3">
               <div>
                 <p className="text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-slate-400">ITR</p>
@@ -60,7 +60,7 @@ function HeroVisual() {
           </div>
 
           {/* Lines suggestive of a form */}
-          <div className="mt-5 grid grid-cols-3 gap-3" aria-hidden="true">
+          <div className="mt-3 grid grid-cols-3 gap-3" aria-hidden="true">
             {[0, 1, 2].map((i) => (
               <div key={i} className="rounded-xl border border-white/10 bg-white/5 p-3">
                 <div className="h-1.5 w-2/3 rounded bg-white/30" />
@@ -95,8 +95,8 @@ export default function Hero() {
   return (
     <section id="home" className="relative overflow-hidden bg-gradient-to-b from-white via-paper to-navy-50/60">
       <div className="bg-grid pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_at_top_right,black,transparent_70%)]" aria-hidden="true" />
-      <div className="container-site relative flex flex-col lg:min-h-[calc(100svh-72px)]">
-        <div className="grid flex-1 items-center gap-12 py-12 sm:py-16 lg:grid-cols-[1.08fr_1fr] lg:gap-14 lg:py-10">
+      <div className="container-site relative flex flex-col lg:min-h-0">
+        <div className="grid flex-1 items-center gap-7 py-8 sm:py-10 lg:grid-cols-[1.08fr_1fr] lg:gap-10 lg:py-8">
           <div>
             <Rise>
               <p className="eyebrow">{t.hero.eyebrow}</p>
@@ -112,9 +112,9 @@ export default function Hero() {
               </p>
             </Rise>
             <Rise delay={180}>
-              <p className="lead mt-5 max-w-xl">{t.hero.desc}</p>
+              <p className="lead mt-3 max-w-xl">{t.hero.desc}</p>
             </Rise>
-            <Rise delay={240} className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Rise delay={240} className="mt-5 flex flex-col gap-3 sm:flex-row">
               <a href={waLink(t.hero.waMsg)} target="_blank" rel="noopener noreferrer" className="btn-wa !px-6 !py-3.5 text-base">
                 <WhatsAppIcon className="h-5 w-5" /> {t.hero.primary}
               </a>
@@ -123,7 +123,7 @@ export default function Hero() {
               </a>
             </Rise>
             <Rise delay={300}>
-              <p className="mt-5 flex items-center gap-2 text-sm text-slate-500">
+              <p className="mt-3 flex items-center gap-2 text-sm text-slate-500">
                 <ShieldCheck className="h-4 w-4 text-navy-500" /> {t.hero.chipSecure} · {t.hero.chipBilingual}
               </p>
             </Rise>
@@ -134,7 +134,7 @@ export default function Hero() {
         </div>
 
         {/* Trust strip */}
-        <Rise delay={350} className="pb-10 lg:pb-8">
+        <Rise delay={350} className="pb-6 lg:pb-5">
           <ul className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-navy-100 bg-navy-100 shadow-soft sm:grid-cols-2 lg:grid-cols-4">
             {t.trust.map((item, i) => {
               const Icon = TRUST_ICONS[i];
