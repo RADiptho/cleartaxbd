@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="h-1 bg-gradient-to-r from-navy-700 via-gold-500 to-sky-400" aria-hidden="true" />
       <div className="container-site grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_1fr_1.2fr] lg:gap-12">
         <div>
-          <a href="#home" className="inline-flex items-center gap-3">
+          <a href="#/home" className="inline-flex items-center gap-3">
             <span className="rounded-xl bg-white p-1.5"><img src="logo-160.webp" alt="Clear Tax BD logo" width="52" height="52" className="h-[52px] w-[52px] rounded-md" loading="lazy" /></span>
             <span>
               <span className="block font-display text-xl font-semibold text-white">Clear Tax BD</span>
@@ -38,7 +38,7 @@ export default function Footer() {
           <h2 className="text-sm font-semibold uppercase tracking-[0.12em] text-white">{f.quick}</h2>
           <ul className="mt-4 space-y-2.5 text-sm">
             {quick.map(([id, label]) => (
-              <li key={id}><a href={`#${id}`} className="transition hover:text-gold-300">{label}</a></li>
+              <li key={id}><a href={`#/${id}`} className="transition hover:text-gold-300">{label}</a></li>
             ))}
           </ul>
         </nav>
@@ -47,7 +47,7 @@ export default function Footer() {
           <h2 className="text-sm font-semibold uppercase tracking-[0.12em] text-white">{f.services}</h2>
           <ul className="mt-4 space-y-2.5 text-sm">
             {f.serviceLinks.map((s) => (
-              <li key={s}><a href="#services" className="transition hover:text-gold-300">{s}</a></li>
+              <li key={s}><a href="#/services" className="transition hover:text-gold-300">{s}</a></li>
             ))}
           </ul>
         </div>
