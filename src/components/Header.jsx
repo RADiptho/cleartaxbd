@@ -27,11 +27,11 @@ function LangSwitch({ className = '' }) {
   );
 }
 
-export default function Header({ onHome }) {
+export default function Header({ onHome, route = 'home' }) {
   const { t } = useLang();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState('home');
+  const active = route;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -39,21 +39,6 @@ export default function Header({ onHome }) {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-
-  // Active section highlighting
-  useEffect(() => {
-    if (!onHome) return;
-    const els = NAV.map((id) => document.getElementById(id)).filter(Boolean);
-    const io = new IntersectionObserver(
-      (entries) => {
-        const vis = entries.filter((e) => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-        if (vis[0]) setActive(vis[0].target.id);
-      },
-      { rootMargin: '-45% 0px -50% 0px', threshold: [0, 0.01] },
-    );
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  }, [onHome]);
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
@@ -64,13 +49,12 @@ export default function Header({ onHome }) {
 
   const close = () => setOpen(false);
 
-  // Mobile menu links: unlock page scroll first, then scroll to the section
   const goMobile = (e, id) => {
     e.preventDefault();
     setOpen(false);
     document.body.style.overflow = '';
-    if (window.location.hash !== `#${id}`) window.history.pushState(null, '', `#${id}`);
-    requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }));
+    window.location.hash = '#/' + id;
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -79,7 +63,7 @@ export default function Header({ onHome }) {
         {t.nav.skip}
       </a>
       <div className={`container-site flex items-center justify-between gap-4 transition-all duration-300 ${scrolled ? 'h-16' : 'h-[72px]'}`}>
-        <a href="#home" onClick={close} className="flex shrink-0 items-center gap-2.5" aria-label="Clear Tax BD — Home">
+        <a href="#/home" onClick={close} className="flex shrink-0 items-center gap-2.5" aria-label="Clear Tax BD — Home">
           <img src="logo-160.webp" alt="Clear Tax BD logo" width="44" height="44" className={`rounded-lg transition-all ${scrolled ? 'h-10 w-10' : 'h-11 w-11'}`} />
           <span className="hidden leading-tight min-[370px]:block">
             <span className="block whitespace-nowrap font-display text-[1.02rem] font-semibold text-navy-900 sm:text-[1.15rem]">Clear Tax BD</span>
@@ -93,11 +77,11 @@ export default function Header({ onHome }) {
               <li key={id}>
                 <a
                   href={`#${id}`}
-                  aria-current={onHome && active === id ? 'true' : undefined}
-                  className={`relative whitespace-nowrap rounded-lg px-2.5 py-2 text-[0.875rem] font-medium transition-colors ${onHome && active === id ? 'text-navy-900' : 'text-slate-600 hover:text-navy-900'}`}
+                  aria-current={active === id ? 'true' : undefined}
+                  className={`relative whitespace-nowrap rounded-lg px-2.5 py-2 text-[0.875rem] font-medium transition-colors ${active === id ? 'text-navy-900' : 'text-slate-600 hover:text-navy-900'}`}
                 >
                   {t.nav[id]}
-                  <span className={`absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-gold-500 transition-transform duration-300 ${onHome && active === id ? 'scale-x-100' : 'scale-x-0'}`} />
+                  <span className={`absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-gold-500 transition-transform duration-300 ${active === id ? 'scale-x-100' : 'scale-x-0'}`} />
                 </a>
               </li>
             ))}
@@ -106,7 +90,7 @@ export default function Header({ onHome }) {
 
         <div className="flex items-center gap-2 sm:gap-3">
           <LangSwitch />
-          <a href="#consultation" className="btn-primary hidden whitespace-nowrap !px-4 !py-2.5 text-sm md:inline-flex">
+          <a href="#/consultation" className="btn-primary hidden whitespace-nowrap !px-4 !py-2.5 text-sm md:inline-flex">
             {t.nav.cta}
           </a>
           <button
@@ -136,7 +120,7 @@ export default function Header({ onHome }) {
                 <a
                   href={`#${id}`}
                   onClick={(e) => goMobile(e, id)}
-                  className={`flex items-center justify-between rounded-xl px-3 py-3 text-base font-medium ${onHome && active === id ? 'bg-navy-50 text-navy-900' : 'text-slate-700 hover:bg-slate-50'}`}
+                  className={`flex items-center justify-between rounded-xl px-3 py-3 text-base font-medium ${active === id ? 'bg-navy-50 text-navy-900' : 'text-slate-700 hover:bg-slate-50'}`}
                 >
                   {t.nav[id]}
                   <ArrowRight className="h-4 w-4 text-slate-400" />
