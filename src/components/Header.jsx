@@ -76,7 +76,7 @@ export default function Header({ onHome, route = 'home' }) {
             {NAV.map((id) => (
               <li key={id}>
                 <a
-                  href={`#${id}`}
+                  href={`#/${id}`}
                   aria-current={active === id ? 'true' : undefined}
                   className={`relative whitespace-nowrap rounded-lg px-2.5 py-2 text-[0.875rem] font-medium transition-colors ${active === id ? 'text-navy-900' : 'text-slate-600 hover:text-navy-900'}`}
                 >
@@ -118,7 +118,7 @@ export default function Header({ onHome, route = 'home' }) {
             {[...NAV.slice(0, 5), 'calculator', 'checklist', ...NAV.slice(5)].map((id) => (
               <li key={id}>
                 <a
-                  href={`#${id}`}
+                  href={`#/${id}`}
                   onClick={(e) => goMobile(e, id)}
                   className={`flex items-center justify-between rounded-xl px-3 py-3 text-base font-medium ${active === id ? 'bg-navy-50 text-navy-900' : 'text-slate-700 hover:bg-slate-50'}`}
                 >
@@ -129,7 +129,7 @@ export default function Header({ onHome, route = 'home' }) {
             ))}
           </ul>
           <div className="mt-4 border-t border-slate-100 pt-4 pb-2">
-                        <a href="#consultation" onClick={(e) => goMobile(e, 'consultation')} className="btn-primary w-full sm:w-auto">{t.nav.cta}</a>
+                        <a href="#/consultation" onClick={(e) => goMobile(e, 'consultation')} className="btn-primary w-full sm:w-auto">{t.nav.cta}</a>
           </div>
         </nav>
       </div>
