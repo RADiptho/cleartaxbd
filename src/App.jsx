@@ -53,7 +53,7 @@ export default function App() {
   }, [route]);
 
   const pages = {
-    home: <><Hero /><WhyUs /></>,
+    home: <Hero />,
     about: <About />,
     services: <Services />,
     why: <WhyUs />,
